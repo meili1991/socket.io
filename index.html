@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>socket-io</title>
+  </head>
+  <body>
+    <h2>当前在线用户</h2>
+    <div><ul id="member-list"></ul></div>
+    <h3 id="selected">与xx对话中</h3>
+    <div>
+      <textarea name="msg-box" id="msg-box" cols="30" rows="10"></textarea>
+    </div>
+    <div><input type="text" id="input-msg" /></div>
+    <button id="send-msg">发送</button>
+  </body>
+  <script src="./jquery-3.3.1.min.js"></script>
+  <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+  <script>
+    $(function() {
+      const msgBox = $("#msg-box");
+      const inputMsg = $("#input-msg");
+      const sendMsg = $("#send-msg");
+      const memberList = $("#member-list");
+      const selected = $("#selected");
+
+      const socket = io("http://127.0.0.1:3000/");
+      socket.on("member", data => {
+        let userArray = data;
+        let str = "";
+        for (let i = 0; i < userArray.length; i++) {
+          str +=
+            "<li><button data-id=" +
+            userArray[i] +
+            ">用户" +
+            userArray[i] +
+            "</button></li>";
+        }
+        memberList.html(str);
+      });
+      socket.on("userMsg", data => {
+        msgBox.html(data);
+      });
+      sendMsg.click(function() {
+        let val = inputMsg.val();
+        socket.emit("msg", val);
+        inputMsg.val("");
+      });
+      memberList.on("click", "button", function(e) {
+        let target = $(e.target);
+        let memberId = target.data("id");
+        console.log(memberId);
+        socket.emit("link", memberId);
+        selected.html("与" + memberId + "对话中");
+      });
+    });
+  </script>
+</html>
