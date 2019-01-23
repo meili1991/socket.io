@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0af),
+    to(#0085ff)
+  );
+  background-image: -webkit-linear-gradient(left, #0af, #0085ff);
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+  padding-top: 100px;
+}
+.logo-box {
+  padding: 10%;
+}
+.img-logo {
+  width: 100%;
+}
+.btn-box {
+  margin-top: 80px;
+}

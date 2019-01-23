@@ -1,0 +1,29 @@
+body {
+  padding-top: 70px;
+}
+.nav-bg {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0af),
+    to(#0085ff)
+  );
+  background-image: -webkit-linear-gradient(left, #0af, #0085ff);
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+}
+
+.glyphicon-menu-left:before {
+  color: #fff;
+}
+
+.nav-title {
+  min-height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+}
