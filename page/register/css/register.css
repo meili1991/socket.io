@@ -1,5 +1,6 @@
 body {
   padding-top: 70px;
+  letter-spacing: 1px;
 }
 .nav-bg {
   background-image: -webkit-gradient(
@@ -26,4 +27,89 @@ body {
   left: 0;
   width: 100%;
   top: 0;
+  font-size: 16px;
+}
+
+/* 表单提样式 */
+
+.input-group-addon {
+  background-color: transparent;
+}
+.text-info,
+.text-danger {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.eyes,
+.tel-head,
+.verify-btn {
+  color: #0085ff;
+}
+.verify-btn {
+  font-size: 12px;
+}
+.verify-input {
+  margin-top: 5px;
+  width: 50%;
+}
+.clause-btn {
+  display: inline;
+  font-size: 12px;
+}
+.clause-btn a {
+  color: #0085ff;
+}
+.clause-box {
+  padding-top: 20px;
+}
+.clause-box span {
+  margin-top: 20px;
+}
+.clause-box label {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  background: #fff;
+  border: #0085ff solid 1px;
+  border-radius: 3px;
+  height: 15px;
+  width: 15px;
+}
+input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  visibility: hidden;
+  background: #fff;
+  border: #0085ff solid 1px;
+  border-radius: 3px;
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+input[type="checkbox"]:checked + label {
+  background: #0085ff;
+}
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  top: 5px;
+  left: 3px;
+  position: absolute;
+  background: transparent;
+  border: #fff solid 2px;
+  border-top: none;
+  border-right: none;
+  height: 6px;
+  width: 10px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.btn-default {
+  color: #fff;
+  background-color: #0085ff;
+  border-color: #0085ff;
 }

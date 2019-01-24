@@ -13,6 +13,8 @@ body {
   background-image: -webkit-linear-gradient(left, #0af, #0085ff);
   background-image: linear-gradient(90deg, #0af, #0085ff);
   padding-top: 100px;
+  letter-spacing: 1px;
+}
 }
 .logo-box {
   padding: 10%;
